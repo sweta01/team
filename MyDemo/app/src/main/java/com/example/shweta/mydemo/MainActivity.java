@@ -47,6 +47,8 @@ public class MainActivity extends AppCompatActivity {
         fibonacci();
         staticMethod();
         staticMethod("Static Method");
+        sum(2,3);
+        sum(2,3,4);
     }
 
     @Override
@@ -188,4 +190,20 @@ public class MainActivity extends AppCompatActivity {
     public static void staticMethod(String strName){
         System.out.println("Static Method :"+"One Argument");
     }
+
+//    Method Over loading
+
+    public void sum(int a,int b){
+        int c=a+b;
+        System.out.println("Overloading :"+c);
+    }
+    public void sum(int a,int b ,int c)
+    {
+        int d=a+b+c;
+      System.out.println("Overloading :"+d);
+    }
+
+//    Overloaded Constructor
+
+
 }
