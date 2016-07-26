@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     private AdView mAdView;
     private Button btnFullscreenAd;
     String str_duplicate[] = {"1", "2", "2", "3", "5"};
+    static int firstValue=60;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +45,35 @@ public class MainActivity extends AppCompatActivity {
         lebelForLoop();
         breakStatement();
         fibonacci();
+        staticMethod();
+        staticMethod("Static Method");
+        sum(2,3);
+        sum(2,3,4);
+//        Constructor
+        new DemoConstructor();
+        DemoConstructor d= new DemoConstructor(12,"Sweta");
+        d.display();
+//        This
+        DemoThis demoThis=new DemoThis(12,"Sweta Gupta");
+        demoThis.display();
+        DemoThis demoWithThis=new DemoThis(13,"Rani","Gupta");
+        demoWithThis.show();
+//        Inheritance
+        InheritanceDemo inheritanceDemo=new InheritanceDemo();
+        System.out.println("Inheritance"+inheritanceDemo.bonus +inheritanceDemo.salary);
+
+//    Aggegation
+        Address address=new Address("Jhansi","UP","India");
+        InheritanceDemo inheritanceDemo1=new InheritanceDemo(1,"Priya",address);
+        inheritanceDemo1.displayAggeration();
+//Override
+        Bike2 bike2=new Bike2();
+        bike2.run();
+
+//        Super
+        Bike3 bike3=new Bike3();
+        bike3.display();
+
     }
 
     @Override
@@ -146,16 +176,59 @@ public class MainActivity extends AppCompatActivity {
 
     public void fibonacci() {
 
-        int first = 0, second = 1, third;
-        System.out.print(first+" "+second);
-        for (int i = 1; i <= 10; i++) {
-            third=first+second;
-            System.out.print(" "+third);
-            first=second;
-            second=third;
+        int n1=0,n2=1,n3,i,count=10;
 
-        }
+        System.out.print("hh"+n1+" "+n2);//printing 0 and 1
+
+        for(i=2;i<count;++i)//loop starts from 2 because 0 and 1 are already printed
+        {
+            n3=n1+n2;
+            System.out.print(" "+n3);
+            n1=n2;
+            n2=n3;
+
+    }
 
 
     }
+    public void intanceVariable(){
+        int count=0;
+        
+
+    }
+    public static void displayShow(){
+        System.out.println("Call Static Variable");
+    }
+    static {
+        System.out.println("First Static Block");
+    }
+    static {
+        System.out.println("Second Static Block");
+    }
+    static {
+        System.out.println("Third Static Block");
+    }
+
+   public static void staticMethod(){
+       System.out.println("Static Method :"+"Zero Argument");
+   }
+    public static void staticMethod(String strName){
+        System.out.println("Static Method :"+"One Argument");
+    }
+
+//    Method Over loading
+
+    public void sum(int a,int b){
+        int c=a+b;
+        System.out.println("Overloading :"+c);
+    }
+    public void sum(int a,int b ,int c)
+    {
+        int d=a+b+c;
+      System.out.println("Overloading :"+d);
+    }
+
+//    Overloaded Constructor
+
+
 }
