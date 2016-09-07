@@ -45,6 +45,18 @@ public class Test{
 							 System.out.println("u");	
 						}
 					}
+    public static void simplePattern4(int n){
+        for(int i=1;i<=7;i++)
+        {
+            
+            for(int j=7;j>=i;j--){
+                System.out.print(j);
+                
+            }
+            System.out.println();
+        }
+        
+    }
 }
 
 
